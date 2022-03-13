@@ -1,10 +1,13 @@
-import { Close } from '@mui/icons-material';
+import { Close, Create, Edit, MoreVert } from '@mui/icons-material';
 import {
   Box,
   Button,
   Container,
+  Fab,
   IconButton,
   Snackbar,
+  SpeedDial,
+  SpeedDialIcon,
   TextField,
 } from '@mui/material';
 import {
@@ -12,6 +15,7 @@ import {
   GridCallbackDetails,
   GridColDef,
   GridDensity,
+  GridRenderCellParams,
   GridRowParams,
   GridToolbarContainer,
   GridToolbarDensitySelector,
@@ -95,13 +99,21 @@ function App() {
       align: 'center',
       headerAlign: 'center',
     },
-    // {
-    //   field: 'Print',
-    //   headerName: 'Buttons',
-    //   renderCell: (params: GridRowParams) => {
-    //     return <Button>Test</Button>;
-    //   },
-    // },
+    {
+      field: 'Print',
+      headerName: 'Buttons',
+      renderCell: (params: GridRenderCellParams) => {
+        return (
+          <IconButton>
+            <MoreVert />
+          </IconButton>
+        );
+      },
+      flex: 0.5,
+      sortable: false,
+      align: 'center',
+      headerAlign: 'center',
+    },
   ];
 
   const rows = [
@@ -166,18 +178,30 @@ function App() {
     </>
   );
 
+  const GRID_DEFAULT_LOCALE_TEXT = {
+    // Filters button
+    toolbarFilters: 'Filtrer',
+
+    // Density button
+    toolbarDensity: 'Densité',
+    toolbarDensityLabel: 'Densité',
+    toolbarDensityCompact: 'Faible',
+    toolbarDensityStandard: 'Moyenne',
+    toolbarDensityComfortable: 'Élevée',
+
+    // Export button
+    toolbarExport: 'Exporter',
+    toolbarExportCSV: 'Télécharger en CSV',
+    toolbarExportPrint: 'Imprimer',
+  };
+
   return (
     <>
       <Container>
         <DataGridPro
           rows={rows}
           columns={columns}
-          localeText={{
-            toolbarColumns: 'Colomnes',
-            toolbarFilters: 'Filtrer',
-            toolbarDensity: 'Densité',
-            toolbarExport: 'Exporter',
-          }}
+          localeText={GRID_DEFAULT_LOCALE_TEXT}
           components={{
             Toolbar: CustomToolbar,
           }}
@@ -199,6 +223,13 @@ function App() {
         message="Supprimer le document"
         action={action}
       />
+
+      <SpeedDial
+        ariaLabel="SpeedDial openIcon example"
+        sx={{ position: 'fixed', bottom: '10%', right: '10%' }}
+        icon={<SpeedDialIcon openIcon={<Edit />} />}
+        onClick={() => console.log('handleSpeedDialClick')}
+      ></SpeedDial>
     </>
   );
 }
