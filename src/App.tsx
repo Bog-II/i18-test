@@ -1,28 +1,51 @@
 import { Box, Container } from '@mui/material';
-import { DataGridPro, GridColDef } from '@mui/x-data-grid-pro';
+import {
+  DataGridPro,
+  GridCallbackDetails,
+  GridColDef,
+  GridRowParams,
+  MuiEvent,
+} from '@mui/x-data-grid-pro';
 
 function App() {
   const columns: GridColDef[] = [
-    { field: 'id', headerName: 'ID', width: 90 },
+    // { field: 'id', headerName: 'ID', width: 90 },
     {
       field: 'firstName',
       headerName: 'First name',
-      width: 350,
+      flex: 1,
       sortable: true,
+      align: 'center',
+      headerAlign: 'center',
     },
     {
       field: 'lastName',
       headerName: 'Last name',
-      width: 150,
+      sortable: true,
+      flex: 1,
+      align: 'center',
+      headerAlign: 'center',
     },
     {
       field: 'age',
       headerName: 'Age',
       type: 'number',
-      headerAlign: 'right',
-      width: 110,
+      flex: 1,
+      sortable: true,
+      align: 'center',
+      headerAlign: 'center',
     },
   ];
+
+  const handleRowClick = (
+    params: GridRowParams,
+    event: MuiEvent<React.MouseEvent>,
+    details: GridCallbackDetails
+  ) => {
+    console.log(params);
+    console.log(event);
+    console.log(details);
+  };
 
   const rows = [
     { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
@@ -70,7 +93,8 @@ function App() {
           disableColumnPinning
           disableColumnMenu
           disableColumnResize
-          onCellDoubleClick=
+          onRowClick={handleRowClick}
+          hideFooter
         />
       </Container>
     </>
