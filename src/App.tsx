@@ -39,7 +39,7 @@ function App() {
           justifyContent: 'space-between',
         }}
       >
-        {/* <Button onClick={() => setOpenSnackBar(true)}>Supprimer</Button> */}
+        <Button onClick={() => setOpenSnackBar(true)}>Supprimer</Button>
         <Box
           sx={{
             width: '80%',
@@ -64,7 +64,6 @@ function App() {
             justifyContent: 'space-between',
           }}
         >
-          {/* <GridToolbarDensitySelector title="Custom" children="Custom" aria-label="Custom"/> */}
           <GridToolbarDensitySelector />
           <GridToolbarExport />
         </Box>
@@ -216,13 +215,14 @@ function App() {
         />
       </Container>
 
-      {/* SnackbarProvider 
+      {/* SnackbarProvider - queue
         https://mui.com/components/snackbars/
       */}
       <Snackbar
         open={openSnackBar}
+        autoHideDuration={5000}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-        autoHideDuration={8000}
+        onClose={() => setOpenSnackBar(false)}
         message="Supprimer le document"
         action={action}
       />
