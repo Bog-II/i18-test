@@ -39,7 +39,6 @@ function App() {
           justifyContent: 'space-between',
         }}
       >
-        <Button onClick={() => setOpenSnackBar(true)}>Supprimer</Button>
         <Box
           sx={{
             width: '80%',
