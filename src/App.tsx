@@ -1,82 +1,50 @@
-import { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Button from '@mui/material/Button';
-import {
-  Box,
-  Fab,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  Alert,
-} from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
-import NavigationIcon from '@mui/icons-material/Navigation';
+import { DataGridPro, GridColDef } from '@mui/x-data-grid-pro';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const columns: GridColDef[] = [
+    { field: 'id', headerName: 'ID', width: 90 },
+    {
+      field: 'firstName',
+      headerName: 'First name',
+      width: 150,
+      sortable: true,
+    },
+    {
+      field: 'lastName',
+      headerName: 'Last name',
+      width: 150,
+    },
+    {
+      field: 'age',
+      headerName: 'Age',
+      type: 'number',
+      width: 110,
+    },
+  ];
+
+  const rows = [
+    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
+    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
+    { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
+    { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
+    { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
+    { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
+    { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
+    { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
+    { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+    { id: 10, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+  ];
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-
-        {count % 2 === 0 ? (
-          <Alert severity="error">This is an error alert — check it out!</Alert>
-        ) : (
-          <Alert severity="success">
-            This is a success alert — check it out!
-          </Alert>
-        )}
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 2,
-            border: 1,
-            borderColor: 'black',
-            padding: 2,
-            borderRadius: 4,
-          }}
-        >
-          <Button
-            variant="contained"
-            startIcon={<DeleteIcon />}
-            onClick={() => setCount((count) => count + 1)}
-          >
-            count is: {count}
-          </Button>
-
-          <FormControl fullWidth>
-            <InputLabel>Language</InputLabel>
-            <Select defaultValue={'EN'} label="Language">
-              <MenuItem value={'EN'}>EN</MenuItem>
-              <MenuItem value={'FR'}>FR</MenuItem>
-              <MenuItem value={'RU'}>RU</MenuItem>
-            </Select>
-          </FormControl>
-
-          <Fab variant="extended" size="small" color="primary" aria-label="add">
-            <NavigationIcon sx={{ mr: 1 }} />
-            Extended
-          </Fab>
-          <Fab
-            variant="extended"
-            size="medium"
-            color="primary"
-            aria-label="add"
-          >
-            <NavigationIcon sx={{ mr: 1 }} />
-            Extended
-          </Fab>
-          <Fab variant="extended" color="primary" aria-label="add">
-            <NavigationIcon sx={{ mr: 1 }} />
-            Extended
-          </Fab>
-        </Box>
-      </header>
+    <div style={{ height: 400, width: '100%' }}>
+      <DataGridPro
+        rows={rows}
+        columns={columns}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
+        checkboxSelection
+        disableSelectionOnClick
+      />
     </div>
   );
 }
