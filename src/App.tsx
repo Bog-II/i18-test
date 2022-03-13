@@ -216,6 +216,9 @@ function App() {
         />
       </Container>
 
+      {/* SnackbarProvider 
+        https://mui.com/components/snackbars/
+      */}
       <Snackbar
         open={openSnackBar}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
