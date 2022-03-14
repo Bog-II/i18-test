@@ -12,7 +12,7 @@ export const CustomToolbar = () => {
       style={{
         display: 'flex',
         alignItems: 'center',
-        columnGap: '2%',
+        columnGap: 'max(2%, 1em)',
         padding: '2% 3%',
         justifyContent: 'space-between',
       }}
@@ -33,17 +33,7 @@ export const CustomToolbar = () => {
         />
       </Box>
 
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          columnGap: '5%',
-          justifyContent: 'space-between',
-        }}
-      >
-        <GridToolbarDensitySelector />
-        <GridToolbarExport />
-      </Box>
+      <GridToolbarDensitySelector />
     </GridToolbarContainer>
   );
 };
