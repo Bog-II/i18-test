@@ -9,7 +9,7 @@ import {
 } from '@mui/x-data-grid-pro';
 import React, { useState } from 'react';
 import { rows } from '../data/rowsDocumentsDataGrid';
-import { columns } from './columnsDocumentDataGrid';
+import { columns } from './columnsDocumentsDataGrid';
 import { CustomToolbar } from './CustomToolbar';
 
 export const DocumentsDataGrid = () => {
