@@ -1,12 +1,21 @@
 import { Close } from '@mui/icons-material';
 import { Button, IconButton, Snackbar } from '@mui/material';
-import React, { useState } from 'react';
+import React, { SyntheticEvent, useState } from 'react';
 
 export const DocumentDataGridCellSnackBar = () => {
   const [openSnackBar, setOpenSnackBar] = useState(true);
 
   const handleCloseSnackBar = () => {
     console.log('handleCloseSnackBar');
+  };
+
+  const handleOnClose = (
+    event: SyntheticEvent<any> | Event,
+    reason: string
+  ) => {
+    if (reason === 'autoHideDuration') {
+      setOpenSnackBar(false);
+    }
   };
 
   const action = (
@@ -34,7 +43,7 @@ export const DocumentDataGridCellSnackBar = () => {
         open={openSnackBar}
         autoHideDuration={5000}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-        onClose={() => setOpenSnackBar(false)}
+        onClose={handleOnClose}
         message="Supprimer le document"
         action={action}
       />
