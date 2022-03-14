@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Avatar, IconButton, Stack, Tooltip } from '@mui/material';
 import { deepPurple } from '@mui/material/colors';
+import { AccountCircle } from '@mui/icons-material';
 
 export default function ButtonAppBar() {
   return (
@@ -15,18 +16,18 @@ export default function ButtonAppBar() {
         </Typography>
 
         <Box sx={{ display: 'flex', columnGap: 1 }}>
-          <Button variant="outlined" color="inherit" size="medium">
-            Login
+          <Button variant="outlined" size="medium">
+            Log in
           </Button>
 
-          <Button variant="contained" color="primary" size="medium">
-            Logout
+          <Button variant="contained" size="medium">
+            Log out
           </Button>
         </Box>
 
         <Tooltip title="Profile">
-          <IconButton size="small">
-            <Avatar sx={{ bgcolor: deepPurple[500] }}>H</Avatar>
+          <IconButton>
+            <AccountCircle fontSize="large" />
           </IconButton>
         </Tooltip>
       </Toolbar>

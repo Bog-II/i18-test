@@ -1,4 +1,7 @@
 export const GRID_DEFAULT_LOCALE_TEXT = {
+  // 0 Documents
+  noRowsLabel: '0 Documents',
+
   // Filters button
   toolbarFilters: 'Filtrer',
 

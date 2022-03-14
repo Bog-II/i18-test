@@ -4,15 +4,14 @@ import { DocumentsDataGrid } from './components/DocumentsDataGrid';
 import { DocumentsDataGridCellMenu } from './components/DocumentsDataGridCellMenu';
 import { DocumentsDataGridSpeedDial } from './components/DocumentsDataGridSpeedDial';
 
-import './App.css'
+import './App.css';
 
 function App() {
   return (
     <>
       <ButtonAppBar />
-      <DocumentsDataGrid />
-
       <DocumentsDataGridCellMenu />
+      <DocumentsDataGrid />
 
       <DocumentDataGridCellSnackBar />
       <DocumentsDataGridSpeedDial />
