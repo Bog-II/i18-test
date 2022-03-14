@@ -1,32 +1,30 @@
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import { Avatar } from '@mui/material';
+import { deepPurple } from '@mui/material/colors';
 
 export default function ButtonAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <AppBar position="static" color="inherit">
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          Logo
+        </Typography>
+        <Box sx={{ display: 'flex', columnGap: '40px' }}>
+          <Box sx={{ display: 'flex', columnGap: '10px' }}>
+            <Button variant="outlined" color="inherit">
+              Login
+            </Button>
+            <Button variant="contained" color="primary">
+              Logout
+            </Button>
+          </Box>
+          <Avatar sx={{ bgcolor: deepPurple[500] }}>H</Avatar>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 }

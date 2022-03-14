@@ -10,7 +10,7 @@ import {
 import React, { useState } from 'react';
 import { rows } from '../data/rowsDocumentsDataGrid';
 import { columns } from './columnsDocumentsDataGrid';
-import { CustomToolbar } from './CustomToolbar';
+import { CustomToolbar } from './DocumentsDataGridToolbar';
 
 export const DocumentsDataGrid = () => {
   const [gridDensity, setGridDensity] = useState<GridDensity>('compact');
