@@ -13,7 +13,8 @@ export const DocumentDataGridCellSnackBar = () => {
     event: SyntheticEvent<any> | Event,
     reason: string
   ) => {
-    if (reason === 'autoHideDuration') {
+    if (reason === 'timeout') {
+      console.log('handleOnClose');
       setOpenSnackBar(false);
     }
   };
@@ -21,7 +22,7 @@ export const DocumentDataGridCellSnackBar = () => {
   const action = (
     <>
       <Button color="primary" size="small" onClick={handleCloseSnackBar}>
-        ANNULER
+        Annuler
       </Button>
       <IconButton
         size="small"
