@@ -1,3 +1,4 @@
+import { Container } from '@mui/material';
 import {
   DataGridPro,
   GridCallbackDetails,
@@ -26,22 +27,24 @@ export const DocumentsDataGrid = () => {
 
   return (
     <>
-      <DataGridPro
-        rows={rows}
-        columns={columns}
-        localeText={GRID_DEFAULT_LOCALE_TEXT}
-        components={{
-          Toolbar: CustomToolbar,
-        }}
-        pageSize={5}
-        autoHeight={true}
-        disableColumnPinning
-        disableColumnMenu
-        disableColumnResize
-        onRowClick={handleRowClick}
-        hideFooter
-        density={gridDensity}
-      />
+      <Container>
+        <DataGridPro
+          rows={rows}
+          columns={columns}
+          localeText={GRID_DEFAULT_LOCALE_TEXT}
+          components={{
+            Toolbar: CustomToolbar,
+          }}
+          pageSize={5}
+          autoHeight={true}
+          disableColumnPinning
+          disableColumnMenu
+          disableColumnResize
+          onRowClick={handleRowClick}
+          hideFooter
+          density={gridDensity}
+        />
+      </Container>
     </>
   );
 };
