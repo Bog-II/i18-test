@@ -1,9 +1,8 @@
-import { Close, Create, Edit, MoreVert } from '@mui/icons-material';
+import { Close, Edit, MoreVert } from '@mui/icons-material';
 import {
   Box,
   Button,
   Container,
-  Fab,
   IconButton,
   Snackbar,
   SpeedDial,
@@ -25,7 +24,6 @@ import {
 import { useState } from 'react';
 
 function App() {
-  const [gridDensity, setGridDensity] = useState<GridDensity>('compact');
   const [openSnackBar, setOpenSnackBar] = useState(true);
 
   const CustomToolbar = () => {
@@ -70,49 +68,7 @@ function App() {
     );
   };
 
-  const columns: GridColDef[] = [
-    // { field: 'id', headerName: 'ID', width: 90 },
-    {
-      field: 'firstName',
-      headerName: 'First name',
-      flex: 1,
-      sortable: true,
-      align: 'center',
-      headerAlign: 'center',
-    },
-    {
-      field: 'lastName',
-      headerName: 'Last name',
-      sortable: true,
-      flex: 1,
-      align: 'center',
-      headerAlign: 'center',
-    },
-    {
-      field: 'age',
-      headerName: 'Age',
-      type: 'number',
-      flex: 1,
-      sortable: true,
-      align: 'center',
-      headerAlign: 'center',
-    },
-    {
-      field: 'Print',
-      headerName: 'Buttons',
-      renderCell: (params: GridRenderCellParams) => {
-        return (
-          <IconButton>
-            <MoreVert />
-          </IconButton>
-        );
-      },
-      flex: 0.5,
-      sortable: false,
-      align: 'center',
-      headerAlign: 'center',
-    },
-  ];
+
 
   const rows = [
     { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
@@ -176,22 +132,7 @@ function App() {
     </>
   );
 
-  const GRID_DEFAULT_LOCALE_TEXT = {
-    // Filters button
-    toolbarFilters: 'Filtrer',
-
-    // Density button
-    toolbarDensity: 'Densité',
-    toolbarDensityLabel: 'Densité',
-    toolbarDensityCompact: 'Faible',
-    toolbarDensityStandard: 'Moyenne',
-    toolbarDensityComfortable: 'Élevée',
-
-    // Export button
-    toolbarExport: 'Exporter',
-    toolbarExportCSV: 'Télécharger en CSV',
-    toolbarExportPrint: 'Imprimer',
-  };
+ 
 
   return (
     <>
