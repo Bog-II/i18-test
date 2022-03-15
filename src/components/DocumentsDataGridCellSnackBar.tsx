@@ -36,7 +36,6 @@ export const DocumentDataGridCellSnackBar = () => {
 
   return (
     <>
-      {' '}
       {/* SnackbarProvider - queue
   https://mui.com/components/snackbars/
 */}
