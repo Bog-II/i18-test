@@ -1,13 +1,8 @@
-import { GridDensity } from '@mui/x-data-grid-pro';
 import React from 'react';
-
-interface DocumentsDataGridContext {
-  searchBarValue: string;
-  setSearchBarValue: React.Dispatch<React.SetStateAction<string>>;
-}
+import { DocumentsDataGridContextInterface } from '../interfaces/DocumentDataGridContextInterface';
 
 export const DocumentsDataGridContext =
-  React.createContext<DocumentsDataGridContext>({
+  React.createContext<DocumentsDataGridContextInterface>({
     searchBarValue: '',
     setSearchBarValue: () => {},
   });

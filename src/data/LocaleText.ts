@@ -17,3 +17,4 @@ export const GRID_DEFAULT_LOCALE_TEXT = {
   toolbarExportCSV: 'Télécharger en CSV',
   toolbarExportPrint: 'Imprimer',
 };
+

@@ -12,9 +12,13 @@ import { rows } from '../data/rowsDocumentsDataGrid';
 import { DocumentsDataGridContext } from './contexts/DocumentDataGridContext';
 import { columns } from './DocumentsDataGridColumns';
 import { CustomToolbar } from './DocumentsDataGridToolbar';
+import { DocumentInterface } from './interfaces/DocumentInterface';
 
 export const DocumentsDataGrid = () => {
   const [searchBarValue, setSearchBarValue] = useState('');
+  const [fileredDocuments, setFileredDocuments] = useState<DocumentInterface[]>(
+    []
+  );
 
   const handleRowClick = (
     params: GridRowParams,

@@ -1,8 +1,10 @@
-export const rows = [
+import { DocumentInterface } from '../components/interfaces/DocumentInterface';
+
+export const rows: DocumentInterface[] = [
   {
     id: 1,
     documentName: 'Document 1',
-    documentCreator: 11,
+    documentCreatorId: 11,
     creationDate: new Date(),
     lastModificationTime: new Date(),
     documentSize: 123,
@@ -10,7 +12,7 @@ export const rows = [
   {
     id: 2,
     documentName: 'Document 2',
-    documentCreator: 22,
+    documentCreatorId: 22,
     creationDate: new Date(),
     lastModificationTime: new Date(),
     documentSize: 1234,
@@ -18,7 +20,7 @@ export const rows = [
   {
     id: 3,
     documentName: 'Document 3',
-    documentCreator: 33,
+    documentCreatorId: 33,
     creationDate: new Date(),
     lastModificationTime: new Date(),
     documentSize: 4561,
@@ -26,7 +28,7 @@ export const rows = [
   {
     id: 4,
     documentName: 'Document 4',
-    documentCreator: 44,
+    documentCreatorId: 44,
     creationDate: new Date(),
     lastModificationTime: new Date(),
     documentSize: 4512,
