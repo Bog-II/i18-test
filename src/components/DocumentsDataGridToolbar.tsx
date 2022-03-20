@@ -2,9 +2,7 @@ import { Box, TextField } from '@mui/material';
 import {
   GridToolbarContainer,
   GridToolbarDensitySelector,
-  GridToolbarExport,
 } from '@mui/x-data-grid-pro';
-import React from 'react';
 
 export const CustomToolbar = () => {
   return (
