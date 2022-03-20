@@ -24,20 +24,20 @@ export const DocumentsDataGrid = () => {
     if (searchBarValue == '') {
       setFileredDocuments([...documents]);
     } else {
-      const filteredDocuments = documents.filter((document) => {
-        const line =
-          document.documentName.toLowerCase() +
-          getDateString(document.creationDate).toLowerCase() +
-          getTimeString(document.lastModificationTime).toLowerCase() +
-          getSizeString(document.documentSize).toLowerCase();
+      const delayFilterDocuments = setTimeout(() => {
+        const filteredDocuments = documents.filter((document) => {
+          const line =
+            document.documentName.toLowerCase() +
+            getDateString(document.creationDate).toLowerCase() +
+            getTimeString(document.lastModificationTime).toLowerCase() +
+            getSizeString(document.documentSize).toLowerCase();
 
-        return line.includes(searchBarValue.toLowerCase());
-      });
+          return line.includes(searchBarValue.toLowerCase());
+        });
+        setFileredDocuments(filteredDocuments);
+      }, 500);
 
-      setFileredDocuments(filteredDocuments);
-      // document.name.toLowerCase().indexOf(searchBarValue.toLowerCase()) !=
-
-      // setFileredDocuments(filteredDocuments);
+      return () => clearTimeout(delayFilterDocuments);
     }
   }, [searchBarValue]);
 
