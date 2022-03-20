@@ -1,4 +1,4 @@
-export const GRID_DEFAULT_LOCALE_TEXT = {
+export const GRID_LOCALE_TEXT = {
   // 0 Documents
   noRowsLabel: '0 Documents',
 

@@ -8,11 +8,12 @@ import {
 } from '@mui/x-data-grid-pro';
 import React, { useEffect, useState } from 'react';
 import { documents } from '../data/documentsDataGrid';
-import { DocumentsDataGridContext } from './contexts/DocumentDataGridContext';
+import { DocumentsDataGridContext } from '../contexts/DocumentDataGridContext';
 import { columns } from './DocumentsDataGridColumns';
 import { CustomToolbar } from './DocumentsDataGridToolbar';
 import { DocumentInterface } from '../interfaces/DocumentInterface';
 import { getDateString, getSizeString, getTimeString } from '../utils/Document';
+import { GRID_LOCALE_TEXT } from '../data/LocaleText';
 
 export const DocumentsDataGrid = () => {
   const [searchBarValue, setSearchBarValue] = useState<string>('');
@@ -63,7 +64,7 @@ export const DocumentsDataGrid = () => {
           <DataGridPro
             rows={fileredDocuments}
             columns={columns}
-            localeText={GRID_DEFAULT_LOCALE_TEXT}
+            localeText={GRID_LOCALE_TEXT}
             components={{
               Toolbar: CustomToolbar,
             }}

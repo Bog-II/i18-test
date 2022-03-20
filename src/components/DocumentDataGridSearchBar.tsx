@@ -1,7 +1,7 @@
 import { Clear, Search } from '@mui/icons-material';
 import { IconButton, InputAdornment, TextField } from '@mui/material';
 import React, { useContext, useState } from 'react';
-import { DocumentsDataGridContext } from './contexts/DocumentDataGridContext';
+import { DocumentsDataGridContext } from '../contexts/DocumentDataGridContext';
 
 export const DocumentDataGridSearchBar = () => {
   const documentContext = useContext(DocumentsDataGridContext);
@@ -21,6 +21,7 @@ export const DocumentDataGridSearchBar = () => {
       id="standard-basic"
       fullWidth
       label="Recherche"
+      color="primary"
       value={documentContext.searchBarValue}
       onChange={onValueChange}
       InputProps={{

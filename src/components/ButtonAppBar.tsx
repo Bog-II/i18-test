@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { IconButton, Tooltip } from '@mui/material';
 import { AccountCircle } from '@mui/icons-material';
+import { ThemeModeButton } from './ThemeModeButton';
 
 export default function ButtonAppBar() {
   return (
@@ -13,6 +14,8 @@ export default function ButtonAppBar() {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Logo
         </Typography>
+
+        <ThemeModeButton />
 
         <Box sx={{ display: 'flex', columnGap: 1 }}>
           <Button variant="outlined" size="medium">
