@@ -1,4 +1,4 @@
-import { DocumentInterface } from '../components/interfaces/DocumentInterface';
+import { DocumentInterface } from '../interfaces/DocumentInterface';
 
 export const rows: DocumentInterface[] = [
   {
