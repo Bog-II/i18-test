@@ -1,9 +1,16 @@
 import { Clear, Search } from '@mui/icons-material';
-import { Box, IconButton, InputAdornment, OutlinedInput, TextField } from '@mui/material';
+import {
+  Box,
+  IconButton,
+  InputAdornment,
+  OutlinedInput,
+  TextField,
+} from '@mui/material';
 import {
   GridToolbarContainer,
   GridToolbarDensitySelector,
 } from '@mui/x-data-grid-pro';
+import { DocumentDataGridSearchBar } from './DocumentDataGridSearchBar';
 
 export const CustomToolbar = () => {
   return (
@@ -24,25 +31,7 @@ export const CustomToolbar = () => {
           justifyContent: 'space-between',
         }}
       >
-        <TextField
-          id="standard-basic"
-          fullWidth
-          label="Recherche"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Search />
-              </InputAdornment>
-            ),
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton>
-                  <Clear />
-                </IconButton>
-              </InputAdornment>
-            ),
-          }}
-        />
+        <DocumentDataGridSearchBar />
       </Box>
 
       <GridToolbarDensitySelector />
