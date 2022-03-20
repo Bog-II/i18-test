@@ -31,9 +31,11 @@ export const DocumentDataGridSearchBar = () => {
         ),
         endAdornment: (
           <InputAdornment position="end">
-            <IconButton onClick={onValueClear}>
-              <Clear />
-            </IconButton>
+            {documentContext.searchBarValue != '' ? (
+              <IconButton onClick={onValueClear}>
+                <Clear />
+              </IconButton>
+            ) : null}
           </InputAdornment>
         ),
       }}

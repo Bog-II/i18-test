@@ -2,10 +2,8 @@ import {
   Delete,
   DriveFileRenameOutline,
   Link,
-  MoreVert,
   OpenInNew,
 } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
 import {
   GridActionsCellItem,
   GridActionsColDef,
@@ -79,7 +77,7 @@ export const columns: GridColDef[] = [
     type: 'string',
   },
   {
-    field: 'documentCreator',
+    field: 'documentCreatorId',
     headerName: 'Document Creator',
     sortable: true,
     flex: 1,
