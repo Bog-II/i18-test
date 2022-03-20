@@ -1,4 +1,5 @@
-import { Box, TextField } from '@mui/material';
+import { Clear, Search } from '@mui/icons-material';
+import { Box, IconButton, InputAdornment, OutlinedInput, TextField } from '@mui/material';
 import {
   GridToolbarContainer,
   GridToolbarDensitySelector,
@@ -17,7 +18,7 @@ export const CustomToolbar = () => {
     >
       <Box
         sx={{
-          width: '80%',
+          width: '90%',
           display: 'flex',
           alignItems: 'bottom',
           justifyContent: 'space-between',
@@ -27,7 +28,20 @@ export const CustomToolbar = () => {
           id="standard-basic"
           fullWidth
           label="Recherche"
-          variant="standard"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <Search />
+              </InputAdornment>
+            ),
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton>
+                  <Clear />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
         />
       </Box>
 
