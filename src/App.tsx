@@ -6,6 +6,7 @@ import { DocumentsDataGridSpeedDial } from './components/DocumentsDataGridSpeedD
 import './App.css';
 import {
   createTheme,
+  CssBaseline,
   PaletteMode,
   ThemeProvider,
 } from '@mui/material';
@@ -38,6 +39,7 @@ function App() {
         }}
       >
         <ThemeProvider theme={theme}>
+          <CssBaseline />
           <ButtonAppBar />
 
           <DocumentsDataGrid />
