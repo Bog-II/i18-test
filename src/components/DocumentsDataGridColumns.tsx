@@ -11,6 +11,7 @@ import {
   GridRenderCellParams,
   GridRowParams,
 } from '@mui/x-data-grid-pro';
+import { getDateString, getSizeString, getTimeString } from '../utils/Document';
 
 const actions: GridActionsColDef = {
   field: 'actions',
@@ -49,23 +50,6 @@ const actions: GridActionsColDef = {
   },
 };
 
-const getStringSize = (size: number) => {
-  if (size < 1000) {
-    return `${size} o`;
-  }
-  size = Math.ceil(size / 1000);
-  if (size < 1000) {
-    return `${size} Ko`;
-  }
-  size = Math.ceil(size / 1000);
-  if (size < 1000) {
-    return `${size} Mo`;
-  }
-
-  size = Math.ceil(size / 1000);
-  return `${size} Go`;
-};
-
 export const columns: GridColDef[] = [
   {
     field: 'documentName',
@@ -93,6 +77,10 @@ export const columns: GridColDef[] = [
     sortable: true,
     align: 'center',
     headerAlign: 'center',
+    renderCell: (params: GridRenderCellParams) => {
+      const lastModificationTime = params.row.lastModificationTime;
+      return getDateString(lastModificationTime);
+    },
   },
   {
     field: 'lastModificationTime',
@@ -104,15 +92,7 @@ export const columns: GridColDef[] = [
     headerAlign: 'center',
     renderCell: (params: GridRenderCellParams) => {
       const lastModificationTime = params.row.lastModificationTime;
-
-      const day = lastModificationTime.getDate();
-      const month = lastModificationTime.getMonth() + 1;
-      const year = lastModificationTime.getFullYear();
-
-      const hour = lastModificationTime.getHours();
-      const minute = lastModificationTime.getMinutes();
-
-      return `${day}/${month}/${year} - ${hour}:${minute}`;
+      return getTimeString(lastModificationTime);
     },
   },
   {
@@ -124,7 +104,7 @@ export const columns: GridColDef[] = [
     align: 'center',
     headerAlign: 'center',
     renderCell: (params: GridRenderCellParams) => {
-      return getStringSize(params.row.documentSize);
+      return getSizeString(params.row.documentSize);
     },
   },
   actions,

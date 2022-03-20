@@ -1,6 +1,6 @@
 import { DocumentInterface } from '../interfaces/DocumentInterface';
 
-export const rows: DocumentInterface[] = [
+export const documents: DocumentInterface[] = [
   {
     id: 1,
     documentName: 'Document 1',
