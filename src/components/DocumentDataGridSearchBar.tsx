@@ -14,6 +14,8 @@ export const DocumentDataGridSearchBar = () => {
     documentContext.setSearchBarValue(event.target.value);
   };
 
+  console.log('rerendering search bar');
+
   return (
     <TextField
       id="standard-basic"

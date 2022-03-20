@@ -3,8 +3,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Avatar, IconButton, Stack, Tooltip } from '@mui/material';
-import { deepPurple } from '@mui/material/colors';
+import { IconButton, Tooltip } from '@mui/material';
 import { AccountCircle } from '@mui/icons-material';
 
 export default function ButtonAppBar() {

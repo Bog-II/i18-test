@@ -1,6 +1,4 @@
-import {
-  Box,
-} from '@mui/material';
+import { Box } from '@mui/material';
 import {
   GridToolbarContainer,
   GridToolbarDensitySelector,
@@ -29,7 +27,11 @@ export const CustomToolbar = () => {
         <DocumentDataGridSearchBar />
       </Box>
 
-      <GridToolbarDensitySelector />
+      <GridToolbarDensitySelector
+        // onChange?: FormEventHandler<T> | undefined;
+        // onChangeCapture?: FormEventHandler<T> | undefined;
+        onChangeCapture={() => console.log('onClick')}
+      />
     </GridToolbarContainer>
   );
 };

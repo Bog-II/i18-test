@@ -14,7 +14,7 @@ import { columns } from './DocumentsDataGridColumns';
 import { CustomToolbar } from './DocumentsDataGridToolbar';
 
 export const DocumentsDataGrid = () => {
-  const [gridDensity, setGridDensity] = useState<GridDensity>('compact');
+  const [gridDensity, setGridDensity] = useState<GridDensity>('standard');
   const [searchBarValue, setSearchBarValue] = useState('');
 
   const handleRowClick = (
@@ -34,8 +34,6 @@ export const DocumentsDataGrid = () => {
           value={{
             searchBarValue: searchBarValue,
             setSearchBarValue: setSearchBarValue,
-            gridDensity: gridDensity,
-            setGridDensity: setGridDensity,
           }}
         >
           <DataGridPro

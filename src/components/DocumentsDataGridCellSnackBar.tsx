@@ -1,6 +1,6 @@
 import { Close } from '@mui/icons-material';
 import { Button, IconButton, Snackbar } from '@mui/material';
-import React, { SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 
 export const DocumentDataGridCellSnackBar = () => {
   const [openSnackBar, setOpenSnackBar] = useState(true);
@@ -37,8 +37,8 @@ export const DocumentDataGridCellSnackBar = () => {
   return (
     <>
       {/* SnackbarProvider - queue
-  https://mui.com/components/snackbars/
-*/}
+        https://mui.com/components/snackbars/
+      */}
       <Snackbar
         open={openSnackBar}
         autoHideDuration={5000}
