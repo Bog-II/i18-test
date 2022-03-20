@@ -9,11 +9,13 @@ import {
 } from '@mui/x-data-grid-pro';
 import React, { useState } from 'react';
 import { rows } from '../data/rowsDocumentsDataGrid';
+import { DocumentsDataGridContext } from './contexts/DocumentDataGridContext';
 import { columns } from './DocumentsDataGridColumns';
 import { CustomToolbar } from './DocumentsDataGridToolbar';
 
 export const DocumentsDataGrid = () => {
   const [gridDensity, setGridDensity] = useState<GridDensity>('compact');
+  const [searchBarValue, setSearchBarValue] = useState('');
 
   const handleRowClick = (
     params: GridRowParams,
@@ -28,22 +30,31 @@ export const DocumentsDataGrid = () => {
   return (
     <>
       <Container>
-        <DataGridPro
-          rows={rows}
-          columns={columns}
-          localeText={GRID_DEFAULT_LOCALE_TEXT}
-          components={{
-            Toolbar: CustomToolbar,
+        <DocumentsDataGridContext.Provider
+          value={{
+            searchBarValue: searchBarValue,
+            setSearchBarValue: setSearchBarValue,
+            gridDensity: gridDensity,
+            setGridDensity: setGridDensity,
           }}
-          pageSize={5}
-          autoHeight={true}
-          disableColumnPinning
-          disableColumnMenu
-          disableColumnResize
-          onRowClick={handleRowClick}
-          hideFooter
-          density={gridDensity}
-        />
+        >
+          <DataGridPro
+            rows={rows}
+            columns={columns}
+            localeText={GRID_DEFAULT_LOCALE_TEXT}
+            components={{
+              Toolbar: CustomToolbar,
+            }}
+            pageSize={5}
+            autoHeight={true}
+            disableColumnPinning
+            disableColumnMenu
+            disableColumnResize
+            onRowClick={handleRowClick}
+            hideFooter
+            density={gridDensity}
+          />
+        </DocumentsDataGridContext.Provider>
       </Container>
     </>
   );

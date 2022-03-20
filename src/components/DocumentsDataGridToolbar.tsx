@@ -1,10 +1,5 @@
-import { Clear, Search } from '@mui/icons-material';
 import {
   Box,
-  IconButton,
-  InputAdornment,
-  OutlinedInput,
-  TextField,
 } from '@mui/material';
 import {
   GridToolbarContainer,

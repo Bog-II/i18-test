@@ -88,8 +88,8 @@ export const columns: GridColDef[] = [
     type: 'string',
   },
   {
-    field: 'creationTime',
-    headerName: 'Creation Time',
+    field: 'creationDate',
+    headerName: 'Creation Date',
     type: 'date',
     flex: 1,
     sortable: true,
@@ -104,6 +104,18 @@ export const columns: GridColDef[] = [
     sortable: true,
     align: 'center',
     headerAlign: 'center',
+    renderCell: (params: GridRenderCellParams) => {
+      const lastModificationTime = params.row.lastModificationTime;
+
+      const day = lastModificationTime.getDate();
+      const month = lastModificationTime.getMonth() + 1;
+      const year = lastModificationTime.getFullYear();
+
+      const hour = lastModificationTime.getHours();
+      const minute = lastModificationTime.getMinutes();
+
+      return `${day}/${month}/${year} - ${hour}:${minute}`;
+    },
   },
   {
     field: 'documentSize',

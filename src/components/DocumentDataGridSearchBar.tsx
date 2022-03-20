@@ -1,16 +1,17 @@
 import { Clear, Search } from '@mui/icons-material';
 import { IconButton, InputAdornment, TextField } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { DocumentsDataGridContext } from './contexts/DocumentDataGridContext';
 
 export const DocumentDataGridSearchBar = () => {
-  const [searchBarValue, setSearchBarValue] = useState('');
+  const documentContext = useContext(DocumentsDataGridContext);
 
   const onValueClear = () => {
-    setSearchBarValue('');
+    documentContext.setSearchBarValue('');
   };
 
   const onValueChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchBarValue(event.target.value);
+    documentContext.setSearchBarValue(event.target.value);
   };
 
   return (
@@ -18,7 +19,7 @@ export const DocumentDataGridSearchBar = () => {
       id="standard-basic"
       fullWidth
       label="Recherche"
-      value={searchBarValue}
+      value={documentContext.searchBarValue}
       onChange={onValueChange}
       InputProps={{
         startAdornment: (
