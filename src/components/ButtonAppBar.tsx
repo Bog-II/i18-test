@@ -6,16 +6,21 @@ import Button from '@mui/material/Button';
 import { IconButton, Tooltip } from '@mui/material';
 import { AccountCircle } from '@mui/icons-material';
 import { ThemeModeButton } from './ThemeModeButton';
+import { ChangeLanguageSelect } from './ChangeLanguageSelect';
 
 export default function ButtonAppBar() {
   return (
     <AppBar position="static" color="inherit">
-      <Toolbar variant="regular" sx={{ display: 'flex', columnGap: 2 }}>
+      <Toolbar
+        variant="regular"
+        sx={{ display: 'flex', columnGap: 2, alignItems: 'center' }}
+      >
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Logo
         </Typography>
 
         <ThemeModeButton />
+        <ChangeLanguageSelect />
 
         <Box sx={{ display: 'flex', columnGap: 1 }}>
           <Button variant="outlined" size="medium">

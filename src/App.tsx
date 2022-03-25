@@ -5,6 +5,7 @@ import { DocumentsDataGridSpeedDial } from './components/DocumentsDataGridSpeedD
 
 import './App.css';
 import {
+  Button,
   createTheme,
   CssBaseline,
   PaletteMode,
@@ -12,9 +13,11 @@ import {
 } from '@mui/material';
 import { ThemeModeContext } from './contexts/ThemeModeContext';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function App() {
   const [mode, setMode] = useState<PaletteMode>('dark');
+  const { t, i18n } = useTranslation();
 
   const darkTheme = createTheme({
     palette: {
@@ -43,6 +46,8 @@ function App() {
           <ButtonAppBar />
 
           <DocumentsDataGrid />
+
+          {t('a')}
 
           <DocumentDataGridCellSnackBar />
           <DocumentsDataGridSpeedDial />
