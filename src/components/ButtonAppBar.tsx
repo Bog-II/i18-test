@@ -7,8 +7,11 @@ import { IconButton, Tooltip } from '@mui/material';
 import { AccountCircle } from '@mui/icons-material';
 import { ThemeModeButton } from './ThemeModeButton';
 import { ChangeLanguageSelect } from './ChangeLanguageSelect';
+import { useTranslation } from 'react-i18next';
 
 export default function ButtonAppBar() {
+  const { t, i18n } = useTranslation();
+
   return (
     <AppBar position="static" color="inherit">
       <Toolbar
@@ -24,11 +27,11 @@ export default function ButtonAppBar() {
 
         <Box sx={{ display: 'flex', columnGap: 1 }}>
           <Button variant="outlined" size="medium">
-            Log in
+            {t('appbar.signin')}
           </Button>
 
           <Button variant="contained" size="medium">
-            Log out
+            {t('appbar.signup')}
           </Button>
         </Box>
 

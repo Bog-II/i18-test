@@ -8,7 +8,10 @@ export const getDateString = (date: Date): string => {
 
 export const getTimeString = (time: Date): string => {
   const hour = time.getHours();
-  const minute = time.getMinutes();
+  let minute = time.getMinutes().toString();
+  if (minute.length < 2) {
+    minute = '0' + minute;
+  }
 
   return `${getDateString(time)} - ${hour}:${minute}`;
 };
