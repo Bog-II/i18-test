@@ -17,7 +17,6 @@ import { useTranslation } from 'react-i18next';
 
 function App() {
   const [mode, setMode] = useState<PaletteMode>('dark');
-  const { t, i18n } = useTranslation();
 
   const darkTheme = createTheme({
     palette: {
@@ -46,8 +45,6 @@ function App() {
           <ButtonAppBar />
 
           <DocumentsDataGrid />
-
-          {t('a')}
 
           <DocumentDataGridCellSnackBar />
           <DocumentsDataGridSpeedDial />
